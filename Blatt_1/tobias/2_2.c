@@ -12,7 +12,7 @@ int main(void)
     scanf("%i", &n);
     printf("\n");
 
-    while (x<n)
+    while (x<=n)
     {
         for(int i=1; i<x; ++i)
         {
