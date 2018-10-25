@@ -11,7 +11,7 @@ int main(void)
     scanf("%i", &n);
     printf("\n");
 
-    while (x<n)
+    while (x<=n)
     {
         erg=erg+x;
         x+=1;  
