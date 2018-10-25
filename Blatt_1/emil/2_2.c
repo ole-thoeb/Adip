@@ -9,7 +9,7 @@ int main(int argc, char const *argv[]){
         puts("Fehlerhafte Eingabe!");
         return 1;
     }
-    //fals die Summe der ersten n Quadratzahlen gemeint ist
+    //falls die Summe der ersten n Quadratzahlen gemeint war
     /*
     unsigned long long quad = 0;
     for(unsigned int i = 1; i <= number; i++){

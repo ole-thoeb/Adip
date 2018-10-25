@@ -10,7 +10,7 @@ int main(int argc, char const *argv[]){
         puts("Fehlerhafte Eingabe!");
         return 1;
     }
-    //reicht bis Wurzel n zu laufen, da danach die Faktoren nur danch andersherum weahren
+    //reicht bis Wurzel n zu laufen, da danach die Faktoren nur danach andersherum währen
     for(unsigned int i = 2; i <= sqrt(number); i++){
         if (number % i == 0) {
             puts("Nein");
