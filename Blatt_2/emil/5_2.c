@@ -23,16 +23,19 @@ int main(int argc, char const *argv[]){
 
 	double a1 = a;
 	int n1 = n;
+	int k = 1;
 	while(n1 > 1){
 		if (n1 % 2 == 0) {
 			n1 /=2;
 			a1 *= a1;
 		}else{
-			a1 *= a1 * 2;
+			k *= a1;
+			a1 *= a1;
 			n1 = (n1-1) / 2;
 		}
 	}
-	
+	a1 *= k;
+
 	produkt = a1;
 	printf("%lf^%i = %lf\n", a, n, produkt);
 	return 0;
