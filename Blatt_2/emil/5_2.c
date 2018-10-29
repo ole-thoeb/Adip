@@ -23,14 +23,26 @@ int main(int argc, char const *argv[]){
 
 	double a1 = a;
 	int n1 = n;
-	while(n > 1){
-		
-		if (n %2 == 0) {
-			
+	while(n1 > 1){
+		if (n1 % 2 == 0) {
+			n1 /=2;
+			a1 *= a1;
+		}else{
+			a1 *= a1 * 2;
+			n1 = (n1-1) / 2;
 		}
-		
 	}
 	
+	produkt = a1;
 	printf("%lf^%i = %lf\n", a, n, produkt);
 	return 0;
 }
+
+/*
+a) braucht für a^17 17 Schritte, da die Schleife von 1 bis 17 läuft.
+a) braucht für a^17 4 Schritte, da:
+	1) (17 - 1) / 2 = 8
+	2) 8 / 2 = 4
+	3) 4 / 2 = 2
+	4) 2 / 2 = 1
+*/
