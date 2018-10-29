@@ -36,7 +36,7 @@ long fib_50()
     long erg=0;
     long f1=0;
     long f2=0;
-    for (int i=0; i<=50; i++)
+    for (int i=0; i<50; i++)
     {
         //
         if (i==0)
@@ -69,7 +69,7 @@ int main(void)
     fib_50();
 
 
-    printf("%ld\n", fib_rec(n));
+    printf("f(%ld)=%ld\n", n, fib_rec(n));
 
     return 0;
 }
