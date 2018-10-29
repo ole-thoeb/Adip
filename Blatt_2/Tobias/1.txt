@@ -1,0 +1,1 @@
+Characters fassen nur ein Byte. Folglich führt im zweiten Fall die Summe von x1 und x2 zu einem Overflow.
