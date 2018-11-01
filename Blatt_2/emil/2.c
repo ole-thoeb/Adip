@@ -8,14 +8,16 @@ unsigned long long long_fib_rec(long n){
 void printFirst50EvenFib(){
 	int counter = 1;
 	unsigned long long a = 0;
-	unsigned long long b = 1;
-	unsigned long long c;
+	unsigned long long b = 1; 
+	unsigned long long c; // zwischenspeicher
 	printf("%i. gerade Fib: %llu\n", counter, a);
 	counter++;
 	while(counter <= 50){
-		c = a + b;
+		c = a + b; //nächste Fibonacci-Zahl
+		//zahlen werden hochgetauscht
 		a = b;
 		b = c;
+		//check ob Fibonacci-Zahl gerade ist
 		if(b % 2 == 0){
 			printf("%i. gerade Fib: %llu\n", counter, b);
 			counter++;
