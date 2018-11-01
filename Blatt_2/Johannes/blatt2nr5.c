@@ -8,20 +8,26 @@ unsigned nr_p = 0, nr_pc = 0;
 
 double power_case(double basis, unsigned exp){
 	nr_pc +=1;
+	int a = 0;
 	if (exp == 0){
 		return 1;
+	} else if (exp == 1){
+		return basis;
 	} else if (exp%2==0){
-		return power_case(basis, exp/2) * power_case(basis, exp/2);
+		a = power_case(basis, exp/2);
+		return a*a;
 	} else {
-		return basis * power_case(basis, (exp-1)/2) * power_case(basis, (exp-1)/2);
-	}
-	
+		a = power_case(basis, (exp-1)/2);
+		return basis*a*a;
+	}		
 }
 
 double power(double basis, unsigned exp){
 	nr_p += 1;
-	if(exp>0){
+	if(exp>1){
 		return basis * power(basis, exp-1);
+	} else if (exp == 1) {
+		return basis;
 	} else {
 		return 1;
 	}
