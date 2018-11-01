@@ -41,7 +41,8 @@ int main()
     }
     else if (erg<n)
     {
-        printf("%i ist eine defizitäre Zahl\n", n);
+        //printf("%i ist eine defizitäre Zahl\n", n);
+        printf("%i ist keine vollkommene Zahl\n", n);
     }
     return 0;
 }
