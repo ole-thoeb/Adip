@@ -28,12 +28,28 @@ float sf(){
 	float SAlt;
 	
 	for(int i = 0; i < 5; i++){
-		printf("%f,", s);
 		SAlt = s;
 		s += arg[i];
-		d += arg[i] - s - SAlt;
+		d += (arg[i] - (s - SAlt));
+		s += d;
 	}
-	return s + d;
+	return s;
+}
+
+double sd(){
+	double arg[5]= {10000.0, (-0.001 / 9.0), 2500.0, (0.001 / 7.0), -12500.0};
+
+	double s = 0.0;
+	double d = 0.0;
+	double SAlt;
+	
+	for(int i = 0; i < 5; i++){
+		SAlt = s;
+		s += arg[i];
+		d += (arg[i] - (s - SAlt));
+		s += d;
+	}
+	return s;
 }
 
 int main(int argc, char const *argv[])
@@ -41,6 +57,7 @@ int main(int argc, char const *argv[])
 	printf("float: %f\n", f());
 	printf("double: %lf\n", d());
 	printf("summF: %f\n", sf());
+	printf("summD: %lf\n", sd());
 	return 0;
 }
 
@@ -49,5 +66,7 @@ int main(int argc, char const *argv[])
 a) 2 / 63000
 b) 0.000032
 c) 0.000032
-d) 
+d) 0.000032
+e) kein Plan
+f) 0.000032
 */
