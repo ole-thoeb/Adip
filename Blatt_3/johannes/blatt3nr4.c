@@ -1,6 +1,27 @@
 #include<stdio.h>
 #include<math.h>
 
+/* Berechnung von Hand 4a)
+x1  = 10000.0        = 10000
+x2  = -1.0e-3 / 9.0  = -1/9000
+x3  = 25.0e2         = 2500
+x4  = 1.0e-3 / 7.0   = 1/7000
+x5  = -12.5e3        = -12500
+
+
+10000+(-1/9000)+2500+1/7000+(-12500)
+=10000+2500-12500-1/9000+1/7000
+=12500-12500-1/9000+1/7000
+=0-1/9000+1/7000
+=1/7000-1/9000
+=9/63000-7/63000
+=2/63000
+=1/31500
+
+→ 0.001/31.5
+=1e-3/31.5
+*/
+
 float floatsum(float *array, unsigned len){
 	float erg = 0;
 	for(int i = 0; i<len; i++){
@@ -63,6 +84,7 @@ int main(void){
 	printf("float-Summe: %f\n", floatsum(xf, 5));
 	printf("double-Summe: %lf\n", doublesum(xd, 5));
 	printf("Algorithmus - float: %f\n", newsum(xf, 5));
+	printf("Das Spezialverfahren ist besser geeignet, da in diesem Fall Rundungsfehler wieder rueckgaengig gemacht werden koennen.\n\tWaehrend bei der einfachen Addition durch die hohen Zahlen und den Gleitpunkt Genauigkeit bei den Nachkommastellen verloren geht, \n\tkann in dem Spezialverfahren die Variable D fuer die Genauigkeit bei den Nachkommastellen sorgen.\n" );
 	printf("Algorithmus - double: %lf\n", newsum_double(xd, 5));
 	return 0;
 }
