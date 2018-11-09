@@ -28,10 +28,10 @@ int main(void){
 	  scanf("%lf", &probe[i]);
 	}
 	//temp zum Testen
-	printf("\n");
+	/*printf("\n");
 	for(int i = 0; i<n; i++){
 	  printf("[%lf] ", probe[i]);
-	}
+	}*/
 	
 	printf("\nArithmetisches Mittel: %lf", a_mittel(probe, n));
 	printf("\nVarianz: %lf", varianz(probe, n, a_mittel(probe, n)));
