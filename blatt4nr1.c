@@ -7,8 +7,6 @@ long long fak_rek(long long n){
 		return 1;
 
 	} else {
-				//temp
-		//printf("[%lld] ", n);
 		return n*fak_rek(n-1);
 	}
 }
@@ -26,7 +24,7 @@ long long fak(int n){
 	}
 }
 
-/* Anmeerkung: Diese Variante der Berechnung des Binomialkoeffizienten ist schlecht,
+/* Anmerkung: Diese Variante der Berechnung des Binomialkoeffizienten ist schlecht,
 da die einzelnen Faktoren schnell sehr sehr groß werden (zB. passt fak_rek(21) schon nicht mehr in longlong)
 Besser wäre eine rekursive Berechnung.
 */
