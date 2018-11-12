@@ -7,11 +7,13 @@ int main()
 
     //das geht
     int var=5;
-    int array[var];
+    int arrayb[var];
    
     //das geht NICHT
-    int var=5;
-    int array[var]={0};
+    int var2=5;
+    int arrayc[var2]={0};
 
+    //warum geht das nicht und wie kann man dann mit 0en initialisieren?
+    
     return 0;
 }
