@@ -38,7 +38,7 @@ int main(int argc, char const *argv[]){
     float number;
     puts("Bitte gib ein Zahl ein: ");
     int check = scanf("%f", &number);
-    //wenn die Eingabe das falsche Format hat oder die Eingabe negativ ist
+    //wenn die Eingabe das falsche Format hat
     if (check != 1) {
         puts("Fehlerhafte Eingabe!");
         return 1;

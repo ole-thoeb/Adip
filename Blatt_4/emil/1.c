@@ -10,9 +10,6 @@ unsigned long long fakultaet(int n){
 
 unsigned long long binomialkoeffizient(int n, int k){
 	if(n < k) return 0;
-	printf("%llu\n", fakultaet(n));
-	printf("%llu\n", fakultaet(k));
-	printf("%llu\n", fakultaet(n - k));
 	return fakultaet(n) / (fakultaet(k) * fakultaet(n - k));
 }
 
@@ -22,6 +19,25 @@ long long lotto(int n, int k){
 
 int main(int argc, char const *argv[])
 {
-	
+	int k, n;
+
+	printf("Bei einer Ziehung von k Karten = ");
+    int check = scanf("%d", &k);
+    //wenn die Eingabe das falsche Format hat
+    if (check != 1) {
+        puts("Fehlerhafte Eingabe!");
+        return 1;
+    }
+
+	printf("aus n Karten = ");
+    check = scanf("%d", &n);
+    //wenn die Eingabe das falsche Format hat 
+    if (check != 1) {
+        puts("Fehlerhafte Eingabe!");
+        return 1;
+    }
+
+	printf("gibt es bei Beruecksichtigung der Reihenfolge %llu moeglichkeiten", lotto(n, k));
+	printf(" und ohne %lld moeglichkeiten", binomialkoeffizient(n, k));
 	return 0;
 }
