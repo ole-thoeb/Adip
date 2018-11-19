@@ -38,7 +38,7 @@ int DynArrayMin_add(DynArrayMin vector, TYPE val){
         return 0;
     }else{
         //neuere größeres feld erstellen. elemente werden automatisch rüberkopiert
-        TYPE *newArg = realloc(vector->el, vector->memo + 1);
+        TYPE *newArg = realloc(vector->el, (vector->memo + 1) * sizeof(TYPE));
         //ueberpruefen ob speicher zur verfuegung gestellt wurde
         if(newArg == NULL) return 1;
         //größe erhöhen
