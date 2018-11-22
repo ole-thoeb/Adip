@@ -1,6 +1,5 @@
 #include "DynArray.h"
 #include "DynArrayMin.h"
-#include "IntVector.h"
 #include <stdio.h>
 
 int main(int argc, char const *argv[]){
