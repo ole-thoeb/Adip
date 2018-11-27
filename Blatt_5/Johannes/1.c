@@ -1,6 +1,7 @@
 #include<stdio.h>
 
-char *encrypt_k(char *s, int k){
+//(Pseudo-)Call by reference
+void encrypt_k(char *s, int k){
 	for(int i = 0; i < strlen(s); i++){
 		//zum Verständnis ascii-Tabelle angucken: so organisiert, das immer im kleinen Alphabet drinbleibt
 		//Fallunterscheidung, um zu verhindern, dass man aus dem Alphabet fliegt.
@@ -9,13 +10,11 @@ char *encrypt_k(char *s, int k){
 		} else if(s[i] >= 123 - k && s[i] < 123){
 			s[i] = s[i] + k - 123 + 97;
 		}
-	}
-
- return s;	
+	}	
 }	
 
-char *decrypt_k(char *s, int k){
-	printf("\nEncrypted, k = %i: %s", k, s);
+//(Pseudo-)Call by reference
+void decrypt_k(char *s, int k){
 	for(int i = 0; i < strlen(s); i++){
 		//zum Verständnis ascii-Tabelle angucken: so organisiert, das immer im kleinen Alphabet drinbleibt
 		//Fallunterscheidung, um zu verhindern, dass man aus dem Alphabet fliegt.
@@ -24,12 +23,11 @@ char *decrypt_k(char *s, int k){
 		} else if (s[i] < 97 + k){
 			s[i] = s[i] - k + 123 - 97;
 		}
-	}
-	printf("\nDecrypted, k = %i: %s", k, s);
- return s;	
+	}	
 }
 
-char *encrypt(char *s){
+//(Pseudo-)Call by reference
+void encrypt(char *s){
 	for(int i = 0; i < strlen(s); i++){
 		//zum Verständnis ascii-Tabelle angucken: so organisiert, das immer im kleinen Alphabet drinbleibt
 		//Fallunterscheidung, um zu verhindern, dass man aus dem Alphabet fliegt.
@@ -38,13 +36,12 @@ char *encrypt(char *s){
 		} else if(s[i] > 109 && s[i] < 123){
 			s[i] = s[i] + 12 - 122 + 97;
 		}
-	}
-
- return s;	
+	}	
 }	
 
-char *decrypt(char *s){
-	printf("\nEncrypted, k = 13: %s", s);
+
+//(Pseudo-)Call by reference
+void decrypt(char *s){
 	for(int i = 0; i < strlen(s); i++){
 		//zum Verständnis ascii-Tabelle angucken: so organisiert, das immer im kleinen Alphabet drinbleibt
 		//Fallunterscheidung, um zu verhindern, dass man aus dem Alphabet fliegt.
@@ -54,11 +51,9 @@ char *decrypt(char *s){
 			s[i] = s[i] - 12 + 122 - 97;
 		}
 	}
-	printf("\nDecrypted, k = 13: %s", s);
- return s;	
 }	
 
-main(void){
+int main(void){
 	//input-String ohne Größenbeschränkung
 	char input[1000];
 	printf("Bitte einzelnes Wort in Kleinbuchstaben eingeben: ");
@@ -76,23 +71,34 @@ main(void){
 	int len = strlen(input);
 	
 	char *dyn_input; 
-	dyn_input = malloc(len*sizeof(char));
+	dyn_input = (char*) malloc(len*sizeof(char));
 	strcpy(dyn_input, input);
-	//Übergangslösung - Array-Weitergabe ist verwirrend...
-	decrypt(encrypt(dyn_input));
-	decrypt_k(encrypt_k(dyn_input, k), k);
-
-	free(dyn_input);
 	
+	//Encrypt/Decrypt mit festem k:
+	encrypt(dyn_input);
+	printf("\nEncrypted, k = 13: %s", dyn_input);
+	decrypt(dyn_input);
+	printf("\nDecrypted, k = 13: %s", dyn_input);
+	
+	//Encrypt/Decrypt mit Input-k:	
+	encrypt_k(dyn_input, k);
+	printf("\nEncrypted, k = %i: %s", k, dyn_input);
+	decrypt_k(dyn_input, k);
+	printf("\nDecrypted, k = %i: %s", k, dyn_input);	
 	
 	//Palindrom-Test
 	int palindrom = 1;
+	
 	printf("\nChar-Vertauschung: ");
-	for(int i = 0; i < len; i++){
-		if (input[i] != input[len-i-1]){palindrom = 0;}
-		printf("%c", input[len-i-1]);
+	for(int i = 0; i < strlen(dyn_input); i++){
+		printf("%c", dyn_input[len-i-1]);
+		if (dyn_input[i] != dyn_input[len-i-1]){
+			palindrom = 0;
+		}
 	}
 	if(palindrom == 1){printf("\nInput ist Palindrom");}else{printf("\nInput ist kein Palindrom");}
 	
+
+	free(dyn_input);
 	return 0;
 }
