@@ -2,30 +2,17 @@
 #include<stdio.h>
 #define CLEAR(s) memset(&(s), 0, sizeof(s))
 
-
-
 typedef struct {
 	unsigned long matrikel;
 	char vorname[30];
 	char nachname[30];
 } student;
 
-/* Später
-void clear_students(student, int);
-void print_student(student, int);
-void print_students(student, int);
-*/
-
 void clear_students(student *s, int len){
 	for(int i = 0; i<len; i++){	
-		//CLEAR(s);	
-		//kann weg?
-		//s[i].matrikel = 0;
 		CLEAR(s[i].matrikel);
 		CLEAR(s[i].vorname);
 		CLEAR(s[i].nachname);
-		//memset(&s[i].vorname, 0, sizeof(s[i].vorname));
-		//strcpy(s[i].nachname, "");
 	}
 	
 }
@@ -39,8 +26,6 @@ void remove_student(student *s, int mnr, int len){
 		}
 	}
 }
-
-
 
 void print_student(student *s, int i){
 	printf("\nVorname = %s, Nachname = %s, Matrikelnummer = %u", s[i].vorname, s[i].nachname, s[i].matrikel);
@@ -87,12 +72,7 @@ int main(void){
 	int max = 20;
 	student *arr;
 	arr = (student*) malloc(max*sizeof(student));
-	/* Kann weg?
-	for(int i = 0; i<len; i++){
-		arr[i].matrikel = 0;
-		strcpy(arr[i].vorname, "");
-		strcpy(arr[i].nachname, "");
-	}*/
+
 	clear_students(arr, max);
 	add_student(arr, 42 ,"Vorname Nr.1", "Nachname Nr.1", max);
 	get_name(arr, 42, max);
