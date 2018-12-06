@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <string.h>
+
+typedef struct student{
+    char nachname[30];
+    float note;
+} student;
+
+void showStudentData(student *s1, int i)
+{
+
+        printf("Student %i:\t%s, %.1f\n", i, s1->nachname, s1->note);
+}
+
+int main()
+{
+
+
+
+    int N=0;
+
+    printf("Wie viele Studenten gibt es?\nN=");
+    scanf("%i", &N);
+    printf("\n");
+    student studenten[N];
+    char temp[30];
+
+    for (int i=1; i<=N; i++)
+    {
+        printf("Nachname: ");
+        scanf("%s", temp); //fgets wird einfach übersrpungen
+        //fgets(temp, sizeof(temp), stdin);
+        strcpy(temp, studenten[i-1].nachname);  //geht offenbar nicht
+        printf("Note: ");
+        scanf("%f", &studenten[i-1].note);
+        printf("\n");
+    }
+    for (int i=1; i<=N; i++)
+    {
+        showStudentData(&studenten[i-1], i);
+    }
+    return 0;
+}
