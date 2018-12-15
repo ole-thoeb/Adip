@@ -1,0 +1,12 @@
+n = Anzahl der Elemente, die schon in der Liste sind
+worst-case
+insertFirst: O(1)
+insertLast: O(n)
+insertSorted: O(n)
+reversList: O(n)
+
+miz zusätzlichem tail pointer
+insertFirst: O(1)
+insertLast: O(1)
+insertSorted: O(n)
+reversList: O(n)
