@@ -3,8 +3,6 @@
 
 int main(int argc, char const *argv[])
 {
-    printf("%i\n", 10%11);
-    printf("%i\n", -1%26);
-    printf("%li\n", malloc(0));
-    return 0;
+    int arg[2][5]={{0, 1, 2, 3, 4}, {5, 6, 11, 8, 9}};
+    printf("%i\n", *(arg[1] + 2));
 }

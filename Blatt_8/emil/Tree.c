@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
-#include <string.h>
 #include "Tree.h"
-#include "DynArray.h"
 
 struct TreeImpl{
 	Tree left;

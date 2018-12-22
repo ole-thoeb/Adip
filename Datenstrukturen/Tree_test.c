@@ -15,6 +15,6 @@ int main(int argc, char const *argv[]){
 	Tree_printInorder(t);
 	putchar('\n');
 	//printf("depth: %i\n", Tree_depth(t));
-	Tree_display(t, 5);
+	Tree_display(t, 2);
 	return 0;
 }
