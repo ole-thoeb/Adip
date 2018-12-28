@@ -88,7 +88,7 @@ int main()
     printf("pop…\t%i\n", pop(&stapel1));
     printf("Is empty?\t%i\n", isempty(stapel1));
 
-printf("\n\nUm auf der obigen Basis eine Queue zu implementieren wären zwei Vorgehensweisen möglich. Entweder muss zum Entnehmen eines Wertes die gesamte Queue durchlaufen werden, oder es werden zwei Pointer verwendet. Der zweite Pointer sollte immer auf das zweite Element zeigen, sodass bei der Funktion pop() current-next auf NULL gesetzt werden kann, nachdem der Wert current->next->data entnommen und free(current->next) durchgeführt wurde.\n");
+printf("\n\nUm auf der obigen Basis eine Queue zu implementieren, wären zwei Vorgehensweisen möglich. Entweder muss zum Entnehmen eines Wertes die gesamte Queue durchlaufen werden, oder es werden zwei Pointer verwendet. Der zweite Pointer sollte immer auf das zweite Element (Second in) zeigen, sodass bei der Funktion pop() current-next auf NULL gesetzt werden kann, nachdem der Wert current->next->data entnommen und free(current->next) durchgeführt wurde.\n");
 // Um auf der obigen Basis eine Queue zu implementieren wären zwei Vorgehensweisen möglich. Entweder muss zum Entnehmen eines Wertes die gesamte Queue durchlaufen werden, oder es werden zwei Pointer verwendet. Der zweite Pointer sollte immer auf das zweite Element zeigen, sodass bei der Funktion pop() current-next auf NULL gesetzt werden kann, nachdem der Wert current->next->data entnommen und free(current->next) durchgeführt wurde.
 
     return 0;
