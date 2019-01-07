@@ -10,14 +10,25 @@ Bevor
      10 13
 	     \
          14
+left rotation
+     9
+  /     \
+  2     15
+/ \    /  \
+1  7  13  16
+	  / \
+    12 14
+	 /    
+   10 
 danach
+right rotation
      9
   /     \
   2     13
 /  \   /  \
-1   7  12  15
-	 /  \  /  \
-     10 13 14  16
+1   7 12    15
+	  /     /  \
+    10    14  16
 
 c)
 bevor
@@ -30,6 +41,7 @@ bevor
      10 13
 
 nachher
+right rotation
      9
   /     \
   2     12
