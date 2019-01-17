@@ -17,8 +17,9 @@ int main(int argc, char const *argv[]){
 	Tree_printPreorder(t);
 	putchar('\n');
 
-	Tree_display(t, 2);
+	Tree_levelorder(t);
 	putchar('\n');
+	puts("done");
 
 	return 0;
 }

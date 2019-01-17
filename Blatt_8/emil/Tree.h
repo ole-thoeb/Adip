@@ -10,4 +10,4 @@ void Tree_printInorder(Tree tree);
 void Tree_printPreorder(Tree tree);
 void Tree_printPostorder(Tree tree);
 int Tree_depth(Tree tree);
-void Tree_display(Tree tree, int numberLength);
+void Tree_levelorder(Tree tree);
